@@ -1,0 +1,536 @@
+﻿
+@{
+    ViewBag.Title = "Assinatura";
+}
+<style type="text/css">
+    .div_teste {
+        width: 290px;
+        height: 300px;
+        background: white;
+        position: absolute;
+        z-index: 100;
+        bottom: 20%;
+        left: 35%;
+        margin-left: auto; /* metade do tamanho (negativo) */
+        margin-right: auto;
+        /* border-top: 2px solid #0de005; */
+        border-radius: 3px;
+        background: #fffcfc;
+        box-shadow: 2px 2px 2px 2px #888888;
+        display: none;
+    }
+</style>
+
+<!-- Promo Block -->
+<section class="u-bg-overlay g-bg-img-hero g-bg-bluegray-opacity-0_3--after" style="background-image: url(../../assets/img-banners/@ViewBag.Img);">
+    <div class="container u-bg-overlay__inner text-center g-pt-150 g-pb-70">
+        <div class="g-mb-100">
+            <span class="d-block g-color-white g-font-size-20 text-uppercase g-letter-spacing-5 mb-4"></span>
+            <h1 class="g-color-white g-font-weight-700 g-font-size-20 g-font-size-50--md text-uppercase g-line-height-1_2 g-letter-spacing-10 mb-4">@ViewBag.TituloPlano</h1>
+            <span class="d-block lead g-color-white g-letter-spacing-2"></span>
+        </div>
+        <div class="g-pos-abs g-left-0 g-right-0 g-z-index-2 g-bottom-30">
+            <a class="js-go-to btn u-btn-outline-white g-color-white g-bg-white-opacity-0_1 g-color-black--hover g-bg-white--hover g-font-weight-600 text-uppercase g-rounded-50 g-px-30 g-py-11" href="#" data-target="#content">
+                <i class="fa fa-angle-down"></i>
+            </a>
+        </div>
+    </div>
+</section>
+<!-- End Promo Block -->
+<!-- Testimonials -->
+<section id="content" class="g-bg-secondary">
+    <div class="container g-py-100">
+        <div class="row justify-content-center">
+            <div class="col-lg-3">
+                <h2>@ViewBag.TituloPlano</h2><input type="hidden" id="hddPlano" value="@ViewBag.TituloPlano" /><input type="hidden" id="hddLink" value="@ViewBag.Link" />
+                <ul class="u-list-inline" style="text-align:left">
+                    <li><i class="fa fa-plus"></i> Internet sem cortes;</li>
+                    <li><i class="fa fa-plus"></i> Ligações ilimitadas para todo o brasil;</li>
+                    <li><i class="fa fa-plus"></i> sms ilimitado</li>
+                    <li><i class="fa fa-plus"></i> Totalmente Digital</li>
+                    <li><i class="fa fa-plus"></i> Sem burocracia</li>
+                    <li><i class="fa fa-plus"></i> Sem permanência</li>
+                </ul>
+            </div>
+            <div class="col-lg-9">
+                <form name="planoRecorr" enctype="multipart/form-data" action="@Url.Action("Assinatura", "Home")" method="post" id="formAtivacao">
+                    <input type="hidden" name="plano" value="@ViewBag.Plano" />
+                    <input type="hidden" name="assunto" value="@ViewBag.TituloPlano" />
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 style="color:red">@ViewBag.Erro1</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="btn-group justified-content">
+                                <label class="u-check">
+                                    <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radGroupBtn2_1" type="radio" id="PessoaFísica" checked>
+                                    <span class="btn btn-md btn-block u-btn-outline-white g-brd-gray-light-v3 g-brd-primary--checked g-color-main g-color-primary--checked g-font-size-default rounded-0 g-py-13">Pessoa Física</span>
+                                </label>
+                                <label class="u-check">
+                                    <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radGroupBtn2_2" type="radio" id="PessoaJurídica">
+                                    <span class="btn btn-md btn-block u-btn-outline-white g-brd-gray-light-v3 g-brd-primary--checked g-color-main g-color-primary--checked g-font-size-default rounded-0 g-py-13">Pessoa Jurídica</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="col-md-10"><span id="spnNome">*Nome</span> <span style="color:red; font-size:9pt" id="msgNomeAss"></span></label>
+                            <input id="txtNomeAss" name="nomeAss" class="form-control u-form-control-lg" type="text" required />
+
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md-10"><span id="spnDoc">*CPF</span> <span style="color:red; font-size:9pt" id="msgCPFAss"></span></label>
+                            <input id="txtCPFAss" name="cpfAss" class="form-control u-form-control-lg" type="text" required />
+
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md-10">*RG <span style="color:red; font-size:9pt" id="msgRGAss"></span></label>
+                            <input id="txtRGAss" name="rgAss" class="form-control u-form-control-lg" type="text" required />
+
+                        </div>
+                        <div class="col-md-6">
+                            <label class="col-md-10">*E-mail <span style="color:red; font-size:9pt" id="msgEmailAss"></span></label>
+                            <input id="txtEmailAss" name="emailAss" class="form-control u-form-control-lg" type="text" required />
+
+                        </div>
+                        <div class="col-md-6">
+                            <label class="col-md-10">*Número do Telefone<span style="color:red; font-size:9pt" id="msgFoneAss"></span></label>
+                            <div class="input-group">
+                                <input id="txtDDDAss" name="numDDDAss" class="form-control u-form-control-lg" type="text" placeholder="DDD" style="width:15px" required />
+                                <input id="txtTelAss" name="numTelAss" class="form-control u-form-control-lg" type="text" placeholder="Nº Tel" style="width:120px" required />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="col-md-10">*CEP <span style="color:red; font-size:9pt" id="msgCEPAss"></span></label>
+                            <div class="input-group">
+                                <input id="txtCEPAss" name="cepAss" class="form-control u-form-control-lg" type="text" placeholder="Preencha com o CEP e click na lupa..." required />
+                                <button type="button" class="btn btn-primary" onclick="consultaCEPRecorr()"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="col-md-10">*Bairro <span style="color:red; font-size:9pt" id="msgBairroAss"></span></label>
+                            <input id="txtBairroAss" name="bairroAss" class="form-control u-form-control-lg" type="text" required />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="col-md-10">*Logradouro <span style="color:red; font-size:9pt" id="msgLogradouroAss"></span></label>
+                            <input id="txtLogrAss" name="logradouroAss" class="form-control u-form-control-lg" type="text" required />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="col-md-10">*Número <span style="color:red; font-size:9pt" id="msgNumeroAss"></span></label>
+                            <input id="txtNumerAss" name="numeroAss" class="form-control u-form-control-lg" type="text" required />
+                        </div>
+                        <div class="col-md-12">
+                            <label class="col-md-10">Complemento </label>
+                            <input id="txtCompleAss" name="complementoAss" class="form-control u-form-control-lg" type="text" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="col-md-10">*Cidade <span style="color:red; font-size:9pt" id="msgCidadeAss"></span></label>
+                            <input id="txtCidadeAss" name="cidadeAss" class="form-control u-form-control-lg" type="text" required />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="col-md-10">*Estado <span style="color:red; font-size:9pt" id="msgEstadoAss"></span></label>
+                            <input id="txtEstadoAss" name="estadoAss" class="form-control u-form-control-lg" type="text" required />
+                        </div>
+                        <div class="col-md-6">
+                            <!--
+                            <label class="col-md-10">*Tipo do número <span style="color:red; font-size:9pt" id="msgCell3"></span></label>
+                            <div class="btn-group justified-content">
+                                <label class="u-check">
+                                    <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radGroupBtn1_1" type="radio" checked="" id="Novo Numero">
+                                    <span class="btn btn-md btn-block u-btn-outline-white g-brd-gray-light-v3 g-brd-primary--checked g-color-main g-color-primary--checked g-font-size-default rounded-0 g-py-13">Novo</span>
+                                </label>
+                                <label class="u-check">
+                                    <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radGroupBtn1_1" type="radio" id="Portabilidade">
+                                    <span class="btn btn-md btn-block u-btn-outline-white g-brd-gray-light-v3 g-brd-primary--checked g-color-main g-color-primary--checked g-font-size-default rounded-0 g-py-13">Portabilidade</span>
+                                </label>
+                            </div>-->
+                            <label class="col-md-10" id="lblDDDesc">*Escolha o DDD Desejado.</label>
+                            @*<div class="input-group">
+                                  <input id="txtcellDDD" name="cellDDD" class="form-control u-form-control-lg" type="text" placeholder="DDD" style="width:15px" />
+                                <select class="form-control u-form-control-lg" name="cellDDD" id="txtcellDDD">
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="19">19</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="24">24</option>
+
+                                </select>
+                                   <input id="txtCell" name="numCell" class="form-control u-form-control-lg" type="text" placeholder="Nº Cell" style="width:120px; display:none" />
+                            </div>*@
+                        </div>
+
+                        <div class="col-md-6" id="divNumeroCell" style="">
+                            <label>*Anexar Doc. identidade com foto *.pdf ou *.jpg</label>
+                            <div class="input-group">
+                                <input class="form-control" type="file" name="pdfFile" id="input-pdfFile" accept=".pdf,.jpg" required />
+                            </div>
+                            <span id="spnArquivo" style="font-weight:bold; text-align:center"></span>
+
+                        </div>
+                        <!--
+                        <div class="col-md-4">
+                            <label class="col-md-10">*ICCID <a href="#!" id="linkHelp"><i class="fa fa-question-circle"></i></a><span style="color:red; font-size:9pt" id="msgICCIDAss"></span></label>
+                            <div id="myTooltip" style="" class="div_teste">
+                                <div style="margin:5px; padding:5px; width:auto; height:auto">
+                                    <h4>Cod. ICCID</h4>
+                                    <p style="text-align:justify">
+                                        O ICCID é o número que está atrás do seu chip próximo ao código de barras
+                                    </p>
+                                    <p>
+                                        <img src="~/assets/img/Helpchip2.jpg" style="width:250px; height:150px" />
+                                    </p>
+                                </div>
+                            </div>
+                            <input id="txtICCID" name="iccidAss" class="form-control u-form-control-lg" type="text" />
+                        </div>-->
+                        <div class="col-md-12">
+                            <br />
+                            <input type="checkbox" name="newsletter" /> Deseja receber mensagens e promoções da HELLO? <br />
+                            <input type="checkbox" name="aceite" id="chkAceite" /> Li e concordo com os <a href="@Url.Action("TermosUso")" target="_blank">termos de uso</a>!
+                        </div>
+                        <div class="col-md-12">
+                            <hr />
+                            <!--<button type="button" class="btn u-btn-black g-brd-main g-brd-primary--hover g-bg-main g-bg-primary--hover g-font-weight-600 g-font-size-12 text-uppercase g-px-25 g-py-13" onclick="formAssinar(@ViewBag.Plano)">Assinar <i class="fa fa-send"></i></button>
+                            <button type="button" class="btn u-btn-black g-brd-main g-brd-primary--hover g-bg-main g-bg-primary--hover g-font-weight-600 g-font-size-12 text-uppercase g-px-25 g-py-13" onclick="CriarPlanoRest()">Assinar <i class="fa fa-send"></i></button>
+                            <button type="button" class="btn u-btn-black g-brd-main g-brd-primary--hover g-bg-main g-bg-primary--hover g-font-weight-600 g-font-size-12 text-uppercase g-px-25 g-py-13" onclick="formAssinar()">Contratar <i class="fa fa-send"></i></button>-->
+                            <button type="submit" id="btnEnviarContrato" class="btn u-btn-black g-brd-main g-brd-primary--hover g-bg-main g-bg-primary--hover g-font-weight-600 g-font-size-12 text-uppercase g-px-25 g-py-13" disabled>Contratar <i class="fa fa-send"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Testimonials -->
+<script src="../assets/vendor/jquery/jquery.min.js"></script>
+<script src="../assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
+<!--
+<script type="text/javascript" src="https://stc.sandbox.pagseguro.uol.com.br/pagseguro/api/checkout/pagseguro.directpayment.js"></script>-->
+<!--
+<script src="~/Scripts/jsPlanosRecorrentes.js"></script>-->
+<script src="~/Scripts/jsCorreio3.js"></script>
+<script src="~/Scripts/jsVendaPagSeguro.js"></script>
+<script>
+    var tipoNum = "Novo Numero";
+    var tipoCli = "PessoaFísica";
+    $("#txtCPFAss").change(function () {
+        validaCPF();
+    });
+
+
+    function validaCPF() {
+        //alert(0);
+        var strCPF = $("#txtCPFAss").val();
+        var Soma;
+        var Resto;
+        Soma = 0;
+        if (strCPF == "00000000000" ||
+            strCPF == "11111111111" ||
+            strCPF == "22222222222" ||
+            strCPF == "33333333333" ||
+            strCPF == "44444444444" ||
+            strCPF == "55555555555" ||
+            strCPF == "66666666666" ||
+            strCPF == "77777777777" ||
+            strCPF == "88888888888" ||
+            strCPF == "99999999999") return document.getElementById("msgCPFAss").innerHTML = "inválido!";
+        //$("#txtCPFAss").focus();
+
+        for (i = 1; i <= 9; i++) Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (11 - i);
+        Resto = (Soma * 10) % 11;
+
+        if ((Resto == 10) || (Resto == 11)) Resto = 0;
+        if (Resto != parseInt(strCPF.substring(9, 10))) return document.getElementById("msgCPFAss").innerHTML = "inválido!";
+
+        Soma = 0;
+        for (i = 1; i <= 10; i++) Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (12 - i);
+        Resto = (Soma * 10) % 11;
+
+        if ((Resto == 10) || (Resto == 11)) Resto = 0;
+        if (Resto != parseInt(strCPF.substring(10, 11))) return document.getElementById("msgCPFAss").innerHTML = "inválido!";
+
+        return document.getElementById("msgCPFAss").innerHTML = "";
+    };
+
+    function validarCNPJ() {
+
+        var strCNPJ = $("#txtCPFAss").val();
+        var cnpj = strCNPJ.replace(/[^\d]+/g, '');
+
+        if (cnpj == '') return document.getElementById("msgCPFAss").innerHTML = "inválido!";
+
+        if (cnpj.length != 14)
+            return document.getElementById("msgCPFAss").innerHTML = "inválido!";
+
+        // Elimina CNPJs invalidos conhecidos
+        if (cnpj == "00000000000000" ||
+            cnpj == "11111111111111" ||
+            cnpj == "22222222222222" ||
+            cnpj == "33333333333333" ||
+            cnpj == "44444444444444" ||
+            cnpj == "55555555555555" ||
+            cnpj == "66666666666666" ||
+            cnpj == "77777777777777" ||
+            cnpj == "88888888888888" ||
+            cnpj == "99999999999999")
+            return document.getElementById("msgCPFAss").innerHTML = "inválido!";
+
+        // Valida DVs
+        tamanho = cnpj.length - 2
+        numeros = cnpj.substring(0, tamanho);
+        digitos = cnpj.substring(tamanho);
+        soma = 0;
+        pos = tamanho - 7;
+        for (i = tamanho; i >= 1; i--) {
+            soma += numeros.charAt(tamanho - i) * pos--;
+            if (pos < 2)
+                pos = 9;
+        }
+        resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+        if (resultado != digitos.charAt(0))
+            return document.getElementById("msgCPFAss").innerHTML = "inválido!";
+
+        tamanho = tamanho + 1;
+        numeros = cnpj.substring(0, tamanho);
+        soma = 0;
+        pos = tamanho - 7;
+        for (i = tamanho; i >= 1; i--) {
+            soma += numeros.charAt(tamanho - i) * pos--;
+            if (pos < 2)
+                pos = 9;
+        }
+        resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+        if (resultado != digitos.charAt(1))
+            return document.getElementById("msgCPFAss").innerHTML = "inválido!";
+
+        return document.getElementById("msgCPFAss").innerHTML = "";
+
+    }
+
+
+
+    $("#linkHelp").hover(
+        function () {
+            document.getElementById("myTooltip").style.display = 'block';
+        },
+        // função que remove a classe
+        function () {
+            document.getElementById("myTooltip").style.display = 'none';
+        });
+
+    function formAssinar() {
+        var nome = planoRecorr.nomeAss.value;
+        var cpf = planoRecorr.cpfAss.value;
+        var email = planoRecorr.emailAss.value;
+        var dddPhone = planoRecorr.numDDDAss.value;
+        var telefone = planoRecorr.numTelAss.value;
+        var cep = planoRecorr.cepAss.value;
+        var bairro = planoRecorr.bairroAss.value;
+        var logradouro = planoRecorr.logradouroAss.value;
+        var numero = planoRecorr.numeroAss.value;
+        var cidade = planoRecorr.cidadeAss.value;
+        var estado = planoRecorr.estadoAss.value;
+        var complemento = planoRecorr.complementoAss.value;
+        var rg = planoRecorr.rgAss.value;
+        var cellDDD = planoRecorr.cellDDD.value;
+        var cellNum = planoRecorr.numCell.value;
+        var pdfFile = planoRecorr.pdfFile.value;
+
+        //var tipoNum = planoRecorr.complementoAss.value;
+        //var iccidAss = planoRecorr.iccidAss.value;
+
+        if (nome === "") {
+            planoRecorr.nomeAss.focus();
+            document.getElementById("msgNomeAss").innerHTML = "* Campo Nome é obrigatório!";
+
+        }
+        if (cpf === "") {
+            planoRecorr.cpfAss.focus();
+            document.getElementById("msgCPFAss").innerHTML = "* Campo CPF é obrigadatório!";
+        }
+        if (email === "") {
+            planoRecorr.emailAss.focus();
+            document.getElementById("msgEmailAss").innerHTML = "* Campo Email obrigatório!";
+
+        }
+        if (dddPhone === "") {
+            planoRecorr.numDDDAss.focus();
+            document.getElementById("msgFoneAss").innerHTML = "* Campo DDD obrigatório!";
+
+        }
+        if (telefone === "") {
+            planoRecorr.numTelAss.focus();
+            document.getElementById("msgFoneAss").innerHTML = "* Campo Telefone obrigatório!";
+
+        }
+
+        if (cep === "") {
+            planoRecorr.cepAss.focus();
+            document.getElementById("msgCEPAss").innerHTML = "* Campo CEP obrigatório!";
+
+        }
+        if (bairro === "") {
+            planoRecorr.bairroAss.focus();
+            document.getElementById("msgBairroAss").innerHTML = "* Campo Bairro obrigatório!";
+
+        }
+        if (logradouro === "") {
+            planoRecorr.logradouroAss.focus();
+            document.getElementById("msgLogradouroAss").innerHTML = "* Campo Logradouro obrigatório!";
+
+        }
+        if (numero === "") {
+            planoRecorr.numeroAss.focus();
+            document.getElementById("msgNumeroAss").innerHTML = "* Campo Número obrigatório!";
+
+        }
+        if (cidade === "") {
+            planoRecorr.cidadeAss.focus();
+            document.getElementById("msgCidadeAss").innerHTML = "* Campo Cidade obrigatório!";
+
+        }
+        if (estado === "") {
+            planoRecorr.estadoAss.focus();
+            document.getElementById("msgEstadoAss").innerHTML = "* Campo Estado obrigatório!";
+
+        }
+        if (rg === "") {
+            planoRecorr.rgAss.focus();
+            document.getElementById("msgRGAss").innerHTML = "* Campo RG obrigatório!";
+
+        }
+        //if (cellDDD === "") {
+        //planoRecorr.cellDDD.focus();
+        //document.getElementById("msgCell3").innerHTML = "* Campo DDD obrigatório!";
+
+        //}
+        //if (cellNum === "") {
+        //planoRecorr.numCell.focus();
+        //document.getElementById("msgCell3").innerHTML = "* Campo Número obrigatório!";
+
+        //}
+        //if (iccidAss === "") {
+        //planoRecorr.iccidAss.focus();
+        //document.getElementById("msgICCIDAss").innerHTML = "* Campo ICCID obrigatório!";
+
+        //}
+
+        else {
+            //document.getElementById('btnAssin').disabled = false;
+            //criarCustomer();
+            EmailPlanRecorr(nome, email, cep, bairro, logradouro, numero, cidade, estado, telefone, complemento, dddPhone, cpf, rg, cellDDD, cellNum, tipoNum, tipoCli, pdfFile);
+            //planoRecorrente(e, nome, cpf, dddPhone, telefone, email, logradouro, numero, complemento, bairro, cep, cidade, estado);
+        }
+    }
+
+
+    function EmailPlanRecorr(a, b, c, d, e, f, g, h, i, j, l, m, n, o, p, q, r, s) {
+        //alert("1");
+        $.ajax({
+            url: '/Home/EnviaEmailPlanRecorr',
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            //enctype="multipart/form-data",
+            type: "POST",
+            data: JSON.stringify({ assunto: $("#hddPlano").val(), nome: a, email: b, cep: c, bairro: d, logradouro: e, numero: f, cidade: g, estado: h, telefone: i, complemento: j, numDDD: l, cpf: m, rg: n, cellDDD: o, cellNum: p, tipoNum: q, tipoCliente: r, pdfFile: s }),
+            success: function (data) {
+                //window.location = $("#hddLink").val();
+                var navigate = $("#hddLink").val();
+                window.open(navigate, '_blank');
+                //window.open('http://pag.ae/7Vg-1AZcN', 'janela', 'width=795, height=590, top=100, left=699, scrollbars=no, status=no, toolbar=no, location=no, menubar=no, resizable=no, fullscreen=no');
+                //document.getElementById("formMail").style.display = 'none';
+                //document.getElementById("emailOk").style.display = 'block';
+                //alert("Mensagem enviada com sucesso! Logo a responderemos.");
+
+
+            },
+            error: function (error) {
+                alert("Verifique o formato do e-mail e insira um e-mail válido! Ou encaminhe seu e-mail para pediulogistica@uniglobaltelecom.com", error.responseText);
+            }
+        });
+    }
+
+    $("input:radio").on("click", function () {
+        var identificador = $(this).attr("id");
+        tipoNum = identificador;
+        tipoCli = identificador;
+        //alert(tipoNum);
+        if (tipoNum === "Novo Numero") {
+            document.getElementById('txtCell').style.display = "none";
+            document.getElementById('lblDDDesc').style.display = "block";
+            document.getElementById('lblNumCelular').style.display = "none";
+        }
+        else if (tipoNum === "Portabilidade") {
+            document.getElementById('txtCell').style.display = "block";
+            document.getElementById('lblDDDesc').style.display = "none";
+            document.getElementById('lblNumCelular').style.display = "block";
+        }
+        else if (tipoCli === "PessoaFísica") {
+            //tipoCli = "PessoaFísica";
+            document.getElementById("spnNome").innerHTML = "*Nome";
+            document.getElementById("spnDoc").innerHTML = "*CPF";
+            document.getElementById("msgCPFAss").innerHTML = "";
+            document.getElementById('PessoaFísica').checked = true;
+            document.getElementById('PessoaJurídica').checked = false;
+            $("#txtCPFAss").val("");
+            $("#txtCPFAss").change(function () {
+                validaCPF();
+            });
+        }
+        else if (tipoCli === "PessoaJurídica") {
+            //tipoCli = "PessoaJurídica";
+            document.getElementById("spnNome").innerHTML = "*Razão Social";
+            document.getElementById("spnDoc").innerHTML = "*CNPJ";
+            document.getElementById("msgCPFAss").innerHTML = "";
+            document.getElementById('PessoaFísica').checked = false;
+            document.getElementById('PessoaJurídica').checked = true;
+            $("#txtCPFAss").val("");
+            $("#txtCPFAss").change(function () {
+                validarCNPJ();
+            });
+        }
+
+        //alert(identificador);
+    });
+
+    $("#chkAceite").click(function () {
+        if ($(this).prop("checked")) {
+            document.getElementById('btnEnviarContrato').disabled = false;
+        } else {
+            document.getElementById('btnEnviarContrato').disabled = true;
+        }
+    });
+
+ /*
+    function TestaCPF(strCPF) {
+        var Soma;
+        var Resto;
+        Soma = 0;
+        if (strCPF == "00000000000") return false;
+
+        for (i = 1; i <= 9; i++) Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (11 - i);
+        Resto = (Soma * 10) % 11;
+
+        if ((Resto == 10) || (Resto == 11)) Resto = 0;
+        if (Resto != parseInt(strCPF.substring(9, 10))) return false;
+
+        Soma = 0;
+        for (i = 1; i <= 10; i++) Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (12 - i);
+        Resto = (Soma * 10) % 11;
+
+        if ((Resto == 10) || (Resto == 11)) Resto = 0;
+        if (Resto != parseInt(strCPF.substring(10, 11))) return false;
+        return true;
+    }
+    var strCPF = "12345678909";
+    alert(TestaCPF(strCPF));*/
+
+
+
+
+</script>

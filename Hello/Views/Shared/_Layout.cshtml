@@ -1,0 +1,462 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Operadora de telefonia que atende o território nacional e internacional" />
+    <meta name="keywords" content="Pacote de Dados, telefonia, telefônia, operadora, internacional, dados, 10Gb, 15Gb, 20Gb, internet" />
+    <meta name="robots" content="index, follow">
+    <title>Hello celular </title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/offcanvas.css">
+    <!-- CSS Global Icons -->
+    <link rel="stylesheet" href="../assets/vendor/icon-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/vendor/icon-line/css/simple-line-icons.css">
+    <link rel="stylesheet" href="../assets/vendor/icon-etlinefont/style.css">
+    <link rel="stylesheet" href="../assets/vendor/icon-line-pro/style.css">
+    <link rel="stylesheet" href="../assets/vendor/icon-hs/style.css">
+    <link rel="stylesheet" href="../assets/vendor/dzsparallaxer/dzsparallaxer.css">
+    <link rel="stylesheet" href="../assets/vendor/dzsparallaxer/dzsscroller/scroller.css">
+    <link rel="stylesheet" href="../assets/vendor/dzsparallaxer/advancedscroller/plugin.css">
+    <link rel="stylesheet" href="../assets/vendor/animate.css">
+    <link rel="stylesheet" href="../assets/vendor/hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" href="../assets/vendor/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" href="../assets/vendor/fancybox/jquery.fancybox.css">
+    <!-- CSS Unify -->
+    <link rel="stylesheet" href="../assets/css/unify-core.css">
+    <link rel="stylesheet" href="../assets/css/unify-components.css">
+    <link rel="stylesheet" href="../assets/css/unify-globals.css">
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/styles.multipage-marketing.css">
+
+    <link rel="stylesheet" href="../assets/vendor/revolution-slider/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="../assets/vendor/revolution-slider/revolution/css/settings.css">
+    <link rel="stylesheet" href="../assets/vendor/revolution-slider/revolution/css/layers.css">
+    <link rel="stylesheet" href="../assets/vendor/revolution-slider/revolution/css/navigation.css">
+    <!-- FLAT ICONS -->
+    <!-- <link href="~/Content/Site.css" rel="stylesheet" />-->
+    <link href="~/flaticons/flaticon.css" rel="stylesheet" />
+    <!--
+    <script src="https://kit.fontawesome.com/55fcd42dc6.js"></script> -->
+
+</head>
+<body>
+    <main>
+        <!-- Header -->
+        <header id="js-header" class="u-header u-header--sticky-top u-header--toggle-section u-header--change-appearance" data-header-fix-moment="300">
+            <div class="u-header__section u-header__section--dark g-transition-0_3 g-py-10" data-header-fix-moment-exclude="g-py-10" data-header-fix-moment-classes="g-bg-black-opacity-0_7 g-py-0">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container">
+                        <!-- Responsive Toggle Button -->
+                        <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
+                            <span class="hamburger hamburger--slider">
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
+                            </span>
+                        </button>
+                        <!-- End Responsive Toggle Button -->
+                        <!-- Logo -->
+                        <a href="@Url.Action("Index", "Home")#home" class="navbar-brand">
+                            <img src="../../../assets/img/logo/hello-branco.png" alt="Image Description" style="width:150px">
+                        </a>
+                        <!-- End Logo -->
+                        <!-- Navigation -->
+                        <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg" id="navBar">
+                            <ul id="js-scroll-nav" class="navbar-nav text-uppercase g-font-weight-600 ml-auto">
+                                <li class="nav-item g-mx-25--lg">
+                                    <a href="@Url.Action("Index", "Home")#home" class="nav-link px-0" style="font-family:'Nunito'">
+                                        Home
+
+                                    </a>
+                                </li>
+                                <li class="nav-item g-mx-25--lg">
+                                    <a href="@Url.Action("Index", "Home")#services" class="nav-link px-0" style="font-family:'Nunito'">
+                                        Planos controle
+
+                                    </a>
+                                </li>
+                                <!--
+                                <li class="nav-item g-mx-25--lg">
+                                    <a href="@Url.Action("Index", "Home")#!" onclick="planoSolicitar('')" class="nav-link px-0" style="font-family:'Nunito'">
+                                        Solicite Já
+
+                                    </a>
+                                </li>-->
+                                <li class="nav-item g-mx-25--lg">
+                                    <a href="@Url.Action("Index", "Home")#!" onclick="saibaMais('')" class="nav-link px-0" style="font-family:'Nunito'">
+                                        Contato
+
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- End Navigation -->
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- End Header -->
+        @RenderBody()
+
+        <!-- Footer -->
+        <footer>
+            <!--
+                        <div class="g-bg-dark">
+                            <div class="container g-pt-70 g-pb-40">
+                                <div class="row">
+                                    <div class="col-12 col-md-12 g-mb-30">
+
+                                        <!-- Links
+                                        <p style="text-align:justify">
+                                            Os serviços prestados pela Uni Global Telecom são de valor adicionado e complementares ao Serviço Móvel Pessoal
+                                            prestado pela operadora de telecomunicações, devidamente autorizada pela Anatel, mas que com ele não se confundem.
+                                            É condição para fruição do compartilhamento do Serviço Móvel Pessoal e do serviço de valor adicionado,
+                                            este último prestado pela Uni Global Telecom, ser e permanecer associado da Uni, estar em dia com suas obrigações
+                                            de associado e a aprovação de crédito.
+                                        </p>
+                                        <!-- End Links
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+            -->
+            <div class="g-bg-dark-light-v1">
+                <div class="container g-pt-30">
+                    <div class="row align-items-center">
+                        <div class="col-md-3 text-center text-md-left g-mb-30">
+                            <!-- Logo -->
+                            <a class="g-text-underline--none--hover mr-4" href="#home">
+                                <img class="g-width-150" src="~/assets/img/logo/hello-branco.png" alt="Logo">
+                            </a>
+                            <!-- End Logo -->
+                            <p class="d-inline-block align-middle g-font-size-15 mb-0">&copy; @DateTime.Today.ToString("yyyy"). Todos os direitos reservados.</p>
+                        </div>
+                        <div class="col-md-3 text-center text-md-center g-mb-30">
+                            <!--
+                                <a class="u-icon-v3 u-icon-size--sm g-color-gray-light-v1 g-color-primary--hover g-bg-transparent g-bg-main--hover rounded" href="https://www.instagram.com/uni.operadora/" target="_blank"><i class="fa fa-instagram"></i></a>
+                            -->
+                        </div>
+                        <div class="col-md-6 g-mb-30 text-right">
+                            <!--
+                            <a href="#" class="btn btn-md u-btn-black g-font-weight-700 text-uppercase text-left g-rounded-10 g-py-10 g-mb-15 g-mx-10 g-mx-0--md g-mr-30--md">
+                                <span class="float-right g-font-size-13" style="font-family:'Nunito'">
+                                    Em breve na
+                                    <span class="d-block g-font-size-10 g-font-weight-400 g-opacity-0_6">App Store</span>
+                                </span>
+
+                                <i class="fa fa-apple float-left g-font-size-26 g-mr-15"></i>
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.wMEUUNI_9537147" class="btn btn-md u-btn-black g-font-weight-700 text-uppercase text-left g-rounded-10 g-py-10 g-mb-15 g-mx-10 g-mx-0--md g-mr-30--md">
+                                <span class="float-right g-font-size-13" style="font-family:'Nunito'">
+                                    Disponível na
+                                    <span class="d-block g-font-size-10 g-font-weight-400 g-opacity-0_6">Google Play</span>
+                                </span>
+
+                                <i class="fa fa-google-play float-left g-font-size-26 g-mr-15"></i>
+                            </a>
+                            -->
+                            <div class="d-inline-block g-mx-15">
+                                <h4 class="g-color-text g-font-size-11 text-left text-uppercase">Email</h4>
+                                <a href="mailto:contato@easysim4u.com"><i class="fa fa-envelope"></i> contato@hellocelular.com.br</a>
+                            </div>
+                            <div class="d-inline-block g-mx-15">
+                                <h4 class="g-color-text g-font-size-11 text-left text-uppercase">Telefone</h4>
+                                <a href="tel:+55(21)38616478"><i class="fa fa-phone"></i>Para comercial: +55(11)3892-1075</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p style="text-align:center; font-size:7pt">
+                                Os serviços prestados pela Hello são de valor adicionado e complementares ao Serviço Móvel Pessoal
+                                prestado pela operadora de telecomunicações, devidamente autorizada pela Anatel, mas que com ele não se confundem.
+                                É condição para fruição do compartilhamento do Serviço Móvel Pessoal e do serviço de valor adicionado,
+                                este último prestado pela Hello, ser e permanecer associado da Easysim4u, estar em dia com suas obrigações
+                                de associado e a aprovação de crédito.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+        <a class="js-go-to u-go-to-v1" href="#" data-type="fixed" data-position='{
+     "bottom": 15,
+     "right": 15
+   }' data-offset-top="400" data-compensation="#js-header" data-show-effect="zoomIn">
+            <i class="hs-icon hs-icon-arrow-top"></i>
+        </a>
+        <!--
+        <div class="fab">
+            <a class="main" href="https://api.whatsapp.com/send?1=pt_BR&phone=552138616478" target="_blank">
+
+                <i class="fab fa-whatsapp fa-3x" style="background-color:#00ff21; border-radius:7px;"></i>
+                <img src="~/assets/img/WhatsApp-icone.png" style="width:60px" />
+            </a>
+        </div>-->
+    </main>
+    <!-- JS Global Compulsory -->
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
+    <script src="../assets/vendor/popper.js/popper.min.js"></script>
+    <script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
+    <script src="../assets/vendor/bootstrap/offcanvas.js"></script>
+    <!-- JS Implementing Plugins -->
+    <script src="../assets/vendor/dzsparallaxer/dzsparallaxer.js"></script>
+    <script src="../assets/vendor/dzsparallaxer/dzsscroller/scroller.js"></script>
+    <script src="../assets/vendor/dzsparallaxer/advancedscroller/plugin.js"></script>
+    <script src="../assets/vendor/masonry/dist/masonry.pkgd.min.js"></script>
+    <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="../assets/vendor/slick-carousel/slick/slick.js"></script>
+    <script src="../assets/vendor/fancybox/jquery.fancybox.min.js"></script>
+    <!-- JS Unify -->
+    <script src="../assets/js/hs.core.js"></script>
+    <script src="../assets/js/components/hs.header.js"></script>
+    <script src="../assets/js/helpers/hs.hamburgers.js"></script>
+    <script src="../assets/js/components/hs.dropdown.js"></script>
+    <script src="../assets/js/components/hs.popup.js"></script>
+    <script src="../assets/js/components/hs.carousel.js"></script>
+    <script src="../assets/js/components/hs.go-to.js"></script>
+    <script src="../assets/js/helpers/hs.height-calc.js"></script>
+    <script src="../assets/js/components/hs.tabs.js"></script>
+    <script src="../assets/js/components/text-animation/hs.text-slideshow.js"></script>
+    <script src="../assets/js/components/hs.rating.js"></script>
+    <script src="../assets/js/components/hs.onscroll-animation.js"></script>
+    <script src="../assets/js/components/hs.counter.js"></script>
+    <script src="../assets/js/components/hs.chart-pie.js"></script>
+
+
+    <!-- JS Revolution Slider -->
+    <script src="../assets/vendor/revolution-slider/revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script src="../assets/vendor/revolution-slider/revolution/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="../assets/vendor/revolution-slider/revolution-addons/slicey/js/revolution.addon.slicey.min.js"></script>
+    <script src="../assets/vendor/revolution-slider/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <script src="../assets/vendor/revolution-slider/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+    <script src="../assets/vendor/revolution-slider/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script src="../assets/vendor/revolution-slider/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script src="../assets/vendor/revolution-slider/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+    <script src="../assets/vendor/revolution-slider/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script src="../assets/vendor/revolution-slider/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script src="../assets/vendor/revolution-slider/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script src="../assets/vendor/revolution-slider/revolution/js/extensions/revolution.extension.video.min.js"></script>
+
+    <!-- JS Custom -->
+    <script src="../assets/js/custom.js"></script>
+    <!-- JS Plugins Init.-->
+    <script src="~/Scripts/jsContatoEmail.js"></script>
+    <script src="~/Scripts/jsSoliciteJa.js"></script>
+    <script src="~/Scripts/jsCorreios.js"></script>
+    <script src="~/Scripts/jsCorreio2.js"></script>
+
+    <script src="~/Scripts/jsAtivacao.js"></script>
+
+
+    <script>
+        var tpj = jQuery,
+            revapi26;
+
+        tpj(document).ready(function () {
+            if (tpj("#rev_slider_26_1").revolution == undefined) {
+                revslider_showDoubleJqueryError("#rev_slider_26_1");
+            } else {
+                revapi26 = tpj("#rev_slider_26_1").show().revolution({
+                    sliderType: "standard",
+                    jsFileLocation: "revolution/js/",
+                    sliderLayout: "fullscreen",
+                    dottedOverlay: "none",
+                    delay: 9000,
+                    navigation: {
+                        keyboardNavigation: "off",
+                        keyboard_direction: "horizontal",
+                        mouseScrollNavigation: "off",
+                        mouseScrollReverse: "default",
+                        onHoverStop: "off",
+                        touch: {
+                            touchenabled: "on",
+                            touchOnDesktop: "off",
+                            swipe_threshold: 75,
+                            swipe_min_touches: 1,
+                            swipe_direction: "horizontal",
+                            drag_block_vertical: false
+                        },
+                        arrows: {
+                            style: "uranus",
+                            enable: true,
+                            hide_onmobile: true,
+                            hide_under: 778,
+                            hide_onleave: false,
+                            tmp: '',
+                            left: {
+                                h_align: "left",
+                                v_align: "center",
+                                h_offset: 15,
+                                v_offset: 0
+                            },
+                            right: {
+                                h_align: "right",
+                                v_align: "center",
+                                h_offset: 15,
+                                v_offset: 0
+                            }
+                        },
+                        bullets: {
+                            enable: true,
+                            hide_onmobile: false,
+                            style: "bullet-bar",
+                            hide_onleave: false,
+                            direction: "horizontal",
+                            h_align: "center",
+                            v_align: "bottom",
+                            h_offset: 0,
+                            v_offset: 30,
+                            space: 5,
+                            tmp: ''
+                        }
+                    },
+                    responsiveLevels: [1240, 1024, 778, 480],
+                    visibilityLevels: [1240, 1024, 778, 480],
+                    gridwidth: [1240, 1024, 778, 480],
+                    gridheight: [868, 768, 960, 720],
+                    lazyType: "none",
+                    parallax: {
+                        type: "scroll",
+                        origo: "slidercenter",
+                        speed: 2000,
+                        levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 46, 47, 48, 49, 50, 51, 55]
+                    },
+                    shadow: 0,
+                    spinner: "off",
+                    stopLoop: "off",
+                    stopAfterLoops: -1,
+                    stopAtSlide: -1,
+                    shuffle: "off",
+                    autoHeight: "off",
+                    fullScreenAutoWidth: "off",
+                    fullScreenAlignForce: "off",
+                    fullScreenOffsetContainer: "",
+                    fullScreenOffset: "60px",
+                    hideThumbsOnMobile: "off",
+                    hideSliderAtLimit: 0,
+                    hideCaptionAtLimit: 0,
+                    hideAllCaptionAtLilmit: 0,
+                    debugMode: false,
+                    fallbacks: {
+                        simplifyAll: "off",
+                        nextSlideOnWindowFocus: "off",
+                        disableFocusListener: false
+                    }
+                });
+            }
+        });
+
+        $(document).on('ready', function () {
+            // initialization of go to
+            $.HSCore.components.HSGoTo.init('.js-go-to');
+
+            // initialization of carousel
+            $.HSCore.components.HSCarousel.init('.js-carousel');
+
+            // initialization of header height offset
+            $.HSCore.helpers.HSHeightCalc.init();
+
+            // initialization of scroll animation
+            $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
+
+            // initialization of HSDropdown component
+            $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
+                afterOpen: function () {
+                    $(this).find('input[type="search"]').focus();
+                }
+            });
+
+
+            // initialization of masonry
+            $('.masonry-grid').imagesLoaded().then(function () {
+                $('.masonry-grid').masonry({
+                    columnWidth: '.masonry-grid-sizer',
+                    itemSelector: '.masonry-grid-item',
+                    percentPosition: true
+                });
+            });
+
+            // initialization of popups
+            $.HSCore.components.HSPopup.init('.js-fancybox');
+
+            // initialization of text animation (typing)
+            $(".u-text-animation.u-text-animation--typing").typed({
+                strings: [
+                    "awesome template",
+                    "perfect template",
+                    "just like a boss"
+                ],
+                typeSpeed: 60,
+                loop: true,
+                backDelay: 1500
+            });
+        });
+
+        $(window).on('load', function () {
+            // initialization of header
+            $.HSCore.components.HSHeader.init($('#js-header'));
+            $.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+
+        });
+
+
+        function planoSolicitar(e) {
+            $("#txtAssunto").val(e);
+            $("#myModal").modal('show');
+        }
+
+        function saibaMais(e) {
+            $("#txtAssunto2").val(e);
+            $("#myModal2").modal('show');
+        }
+
+        function ativacaoChip() {
+            $("#myMdlAtive").modal('show');
+        }
+    </script>
+    <!--Start of Tawk.to Script
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5d656d09eb1a6b0be609a505/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+    <!--Start of Tawk.to Script
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = "https://embed.tawk.to/5b85b100f31d0f771d8439be/default";
+            s1.charset = "UTF-8";
+            s1.setAttribute("crossorigin", "*");
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+</body>
+</html>
